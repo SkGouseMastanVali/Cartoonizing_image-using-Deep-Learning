@@ -2,6 +2,6 @@ tensorflow==2.4.1
 numpy
 flask
 keras
-cv2 (opencv-python)
+opencv-python
 tqdm
 tf_slim
