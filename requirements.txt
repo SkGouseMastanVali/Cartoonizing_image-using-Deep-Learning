@@ -1,4 +1,7 @@
 tensorflow==2.4.1
 numpy
-pandas
 flask
+keras
+cv2
+tqdm
+tf_slim
