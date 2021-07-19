@@ -39,7 +39,7 @@ def cartoonize():
     print("---------------------------------------")
     print(f)
     print(type(f))
-    model_path = 'saved_models'
+    model_path = 'checkpoint'
     load_folder = 'static\\normal_images'
     save_folder = 'static\\cartoonized_images'
     if not os.path.exists(save_folder):
