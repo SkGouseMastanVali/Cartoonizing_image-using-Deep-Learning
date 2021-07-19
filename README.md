@@ -8,9 +8,9 @@ we have collected the the different types of images fron different datasets. we 
 
 we have implemented White Box Representation to convert the image into cartoon, which contain the surface,structural and textual representation. all these are used to smoothening the surface and edges, enhancing the colloring effects, and converting into black and white format and gives the finishing touch of cartoon effect.
 
-================================
+==========================
 HOW TO EXECUTE THE PROJECT 
-================================
+==========================
 
 To execute this project First we need to open the command promt and naviagte to the project folder where app.py file exists. Here we need to execute two commands to run this project.
 
