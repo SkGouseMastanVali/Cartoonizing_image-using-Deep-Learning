@@ -8,4 +8,16 @@ we have collected the the different types of images fron different datasets. we 
 
 we have implemented White Box Representation to convert the image into cartoon, which contain the surface,structural and textual representation. all these are used to smoothening the surface and edges, enhancing the colloring effects, and converting into black and white format and gives the finishing touch of cartoon effect.
 
-we can execute this project by running app.py file and enter 'cmd' command in at the app.py file url. the main file of cartoonizing is app.py file. so run the app.py file and once the server started go to web browser and enter localhost:5000 and hit the enter button. now select your desired image and cartoon it instantly. 
+================================
+HOW TO EXECUTE THE PROJECT 
+================================
+
+To execute this project First we need to open the command promt and naviagte to the project folder where app.py file exists. Here we need to execute two commands to run this project.
+
+First we need to run this command 'pip install -r requirements.txt', by running this command we get the all the required packages to for this project.
+
+Once all the required packages are installed then run the command 'python app.py', then server get starts
+
+The moment server gets starts, Go to WebBrowser and enter the url 'localhost:5000',as it is the default local host for the flask. 
+
+Now you can select your desired picture and hit the cartoon button to get the cartoonized image. 
