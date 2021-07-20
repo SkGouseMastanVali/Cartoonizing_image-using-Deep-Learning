@@ -120,7 +120,7 @@ input[type=submit]:hover {
   <form name="" method="POST" action="http://localhost:5000/cartoonize" enctype = "multipart/form-data">
     <div class="row">
       <div class="col-100" style="text-align:center">
-        <input type="file" accept="image/*" name="ifile" id="file" onchange="return fileValidation()"/>
+        <input type="file" accept="image/*" name="ifile" id="file" onchange="return fileValidation()" required/>
         <input type="submit" value="Cartoonize">
       </div>
     </div>
@@ -128,12 +128,12 @@ input[type=submit]:hover {
   {% if img_name %}
     <div class="row1" style="margin-top:15px;">
       <div class="column1" style="text-align:center;">
-        {% set c = 'cartoonized_images/'~img_name %}
-        <img src="{{url_for('static', filename = c)}}" width="100%">
+        {% set c = './cartoonized_images/'~img_name %}
+        <img src="{{url_for('uploads', filename = c)}}" width="100%">
       </div>
       <div class="column1" style="text-align:center;">
-        {% set t = 'normal_images/'~img_name %}
-        <img src="{{url_for('static', filename = t)}}" width="100%">
+        {% set t = './normal_images/'~img_name %}
+        <img src="{{url_for('uploads', filename = t)}}" width="100%">
       </div>
     </div>
 	{% endif %}
@@ -141,3 +141,4 @@ input[type=submit]:hover {
 
 </body>
 </html>
+
