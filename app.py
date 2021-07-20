@@ -9,9 +9,9 @@ tf.disable_v2_behavior()
 from tqdm import tqdm
 
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='./uploads')
 
-app.config['UPLOAD_PATH'] = 'static\\normal_images'
+app.config['UPLOAD_PATH'] = './uploads/normal_images'
 
 @app.route('/')
 def home():
@@ -36,12 +36,9 @@ def cartoonize():
       f = request.files['ifile']
     if f.filename != '':
         f.save(os.path.join(app.config['UPLOAD_PATH'], f.filename))
-    print("---------------------------------------")
-    print(f)
-    print(type(f))
     model_path = 'checkpoint'
-    load_folder = 'static\\normal_images'
-    save_folder = 'static\\cartoonized_images'
+    load_folder = './uploads/normal_images'
+    save_folder = './uploads/cartoonized_images'
     if not os.path.exists(save_folder):
         os.mkdir(save_folder)
     input_photo = tf.placeholder(tf.float32, [1, None, None, 3])
@@ -59,8 +56,6 @@ def cartoonize():
     sess.run(tf.global_variables_initializer())
     saver.restore(sess, tf.train.latest_checkpoint(model_path))
     name_list = os.listdir(load_folder)
-    print("...............................................")
-    print(name_list)
     for name in name_list:
         if name == f.filename:
             img = name
@@ -68,7 +63,6 @@ def cartoonize():
     try:
         load_path = os.path.join(load_folder, img)
         save_path = os.path.join(save_folder, img)
-        print(save_path)
         image = cv2.imread(load_path)
         image = resize_crop(image)
         batch_image = image.astype(np.float32)/127.5 - 1
