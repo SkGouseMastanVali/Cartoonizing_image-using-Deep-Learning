@@ -30,7 +30,7 @@ def resize_crop(image):
     image = image[:h, :w, :]
     return image
 
-@app.route('/cartoonize', methods = ['GET', 'POST'])
+@app.route('/predict', methods = ['GET', 'POST'])
 def cartoonize():
     if request.method == 'POST':
       f = request.files['ifile']
